@@ -1,0 +1,319 @@
+<!-- build time:Sun Jan 05 2020 17:24:33 GMT+0800 (GMT+08:00) --><!DOCTYPE HTML><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="keywords" content="Python判断和循环语句, A2Data"><meta name="description" content="
+Python判断循环语句1、if-else
+掌握 if-else 的语法格式 
+
+
+想一想：在使用if的时候，它只能做到满足条件时要做的事情。那万一需要在不满足条件的时候，做某些事，该怎么办呢？
+答：else
+
+1.1、使用格式
+if 条"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>Python判断和循环语句 | A2Data</title><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><script src="/libs/jquery/jquery.min.js"></script><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper head-container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><div><img src="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">A2Data</span></div></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom:.6"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom:.6"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom:.6"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom:.6"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">A2Data</div><div class="logo-desc">Never really desperate, only the lost of the soul.</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li></ul></div></div></nav></header><script src="/libs/cryptojs/crypto-js.min.js"></script><script>(function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();</script><div class="bg-cover pd-header post-cover" style="background-image:url(/medias/featureimages/12.jpg)"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><div class="description center-align post-title">Python判断和循环语句</div></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{width:345px;padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content{height:calc(100vh - 250px);overflow:auto}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#42b983;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px}#toc-content .is-active-link{color:#42b983}#toc-content .is-active-link::before{background-color:#42b983}#floating-toc-btn{position:fixed;right:15px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/Python/"><span class="chip bg-color">Python</span> </a><a href="/tags/编程语言/"><span class="chip bg-color">编程语言</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Python/" class="post-category">Python</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp; 2019-12-09</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp; 2.9k</div><div class="info-break-policy"><i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp; 11 分</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp; <span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/A2Data/cdn/img/20191209085857.png" alt="Python判断与循环"></p><h1 id="Python判断循环语句"><a href="#Python判断循环语句" class="headerlink" title="Python判断循环语句"></a>Python判断循环语句</h1><h2 id="1、if-else"><a href="#1、if-else" class="headerlink" title="1、if-else"></a>1、if-else</h2><ul><li>掌握 if-else 的语法格式</li></ul><blockquote><p>想一想：在使用if的时候，它只能做到满足条件时要做的事情。那万一需要在不满足条件的时候，做某些事，该怎么办呢？</p><p>答：else</p></blockquote><h3 id="1-1、使用格式"><a href="#1-1、使用格式" class="headerlink" title="1.1、使用格式"></a>1.1、使用格式</h3><blockquote><pre class="language-python"><code class="language-python"><span class="token keyword">if</span> 条件<span class="token punctuation">:</span>
+    满足条件时要做的事情<span class="token number">1</span>
+    满足条件时要做的事情<span class="token number">2</span>
+    满足条件时要做的事情<span class="token number">3</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span>省略<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    不满足条件时要做的事情<span class="token number">1</span>
+    不满足条件时要做的事情<span class="token number">2</span>
+    不满足条件时要做的事情<span class="token number">3</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span>省略<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></code></pre></blockquote><p><strong>demo</strong></p><p>马上要过年了，又到了抢票的季节。</p><pre class="language-python"><code class="language-python">    chePiao <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment" spellcheck="true"># 用1代表有车票，0代表没有车票</span>
+    <span class="token keyword">if</span> chePiao <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"有车票，可以上火车"</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"终于可以坐着回家了，美滋滋~~~"</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"没有车票，不能上车"</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"可否上车补票啊，真是一票难求啊~~~~(>_&lt;)~~~~"</span><span class="token punctuation">)</span></code></pre><h3 id="1-2、练一练"><a href="#1-2、练一练" class="headerlink" title="1.2、练一练"></a>1.2、练一练</h3><blockquote><p>要求：从键盘输入刀子的长度，如果刀子长度没有超过10cm，则允许上火车，否则不允许上火车</p></blockquote><h2 id="2、elif"><a href="#2、elif" class="headerlink" title="2、elif"></a>2、elif</h2><ul><li><p>想一想:</p><blockquote><p>if能完成当xxx时做事情</p><p>if-else能完成当xxx时做事情1，否则做事情2</p><p>如果有这样一种情况：</p><p>当xxx1时做事情1，</p><p>当xxx2时做事情2，</p><p>当xxx3时做事情3，</p><p>那该怎么实现呢？</p></blockquote></li><li><p>答:</p><blockquote><p>elif</p></blockquote></li></ul><h3 id="2-1、elif的功能"><a href="#2-1、elif的功能" class="headerlink" title="2.1、elif的功能"></a>2.1、elif的功能</h3><p><em>elif的使用格式如下</em></p><pre class="language-python"><code class="language-python">    <span class="token keyword">if</span> xxx1<span class="token punctuation">:</span>
+        事情<span class="token number">1</span>
+    <span class="token keyword">elif</span> xxx2<span class="token punctuation">:</span>
+        事情<span class="token number">2</span>
+    <span class="token keyword">elif</span> xxx3<span class="token punctuation">:</span>
+        事情<span class="token number">3</span></code></pre><p>说明:</p><ul><li>当xxx1满足时，执行事情1，然后整个if结束</li><li>当xxx1不满足时，那么判断xxx2，如果xxx2满足，则执行事情2，然后整个if结束</li><li>当xxx1不满足时，xxx2也不满足，如果xxx3满足，则执行事情3，然后整个if结束</li></ul><p><strong>demo</strong></p><pre class="language-python"><code class="language-python">    score <span class="token operator">=</span> <span class="token number">77</span>
+
+    <span class="token keyword">if</span> score<span class="token operator">>=</span><span class="token number">90</span> <span class="token operator">and</span> score<span class="token operator">&lt;=</span><span class="token number">100</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'本次考试，等级为A'</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> score<span class="token operator">>=</span><span class="token number">80</span> <span class="token operator">and</span> score<span class="token operator">&lt;</span><span class="token number">90</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'本次考试，等级为B'</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> score<span class="token operator">>=</span><span class="token number">70</span> <span class="token operator">and</span> score<span class="token operator">&lt;</span><span class="token number">80</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'本次考试，等级为C'</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> score<span class="token operator">>=</span><span class="token number">60</span> <span class="token operator">and</span> score<span class="token operator">&lt;</span><span class="token number">70</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'本次考试，等级为D'</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> score<span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">and</span> score<span class="token operator">&lt;</span><span class="token number">60</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'本次考试，等级为E'</span><span class="token punctuation">)</span></code></pre><h3 id="2-2、注意点"><a href="#2-2、注意点" class="headerlink" title="2.2、注意点"></a>2.2、注意点</h3><ul><li><p>可以和else一起使用</p><pre class="language-reStructuredText"><code class="language-reStructuredText">   if 性别为男性:
+       输出男性的特征
+       ...
+   elif 性别为女性:
+       输出女性的特征
+       ...
+   else:
+       第三种性别的特征
+       ...</code></pre><p>说明:</p><ul><li>当 “性别为男性” 满足时，执行 “输出男性的特征”的相关代码</li><li>当 “性别为男性” 不满足时，如果 “性别为女性”满足，则执行 “输出女性的特征”的相关代码</li><li>当 “性别为男性” 不满足，“性别为女性”也不满足，那么久默认执行else后面的代码，即 “第三种性别的特征”相关代码</li></ul></li><li><p>elif必须和if一起使用，否则出错</p></li></ul><h2 id="3、if嵌套"><a href="#3、if嵌套" class="headerlink" title="3、if嵌套"></a>3、if嵌套</h2><p>想一想：</p><blockquote><p>坐火车或者地铁的实际情况是：先进行安检如果安检通过才会判断是否有车票，或者是先检查是否有车票之后才会进行安检，即实际的情况某个判断是再另外一个判断成立的基础上进行的，这样的情况该怎样解决呢？</p></blockquote><p>答：</p><blockquote><p>if嵌套</p></blockquote><h3 id="3-1、嵌套格式"><a href="#3-1、嵌套格式" class="headerlink" title="3.1、嵌套格式"></a>3.1、嵌套格式</h3><pre class="language-python"><code class="language-python">  <span class="token keyword">if</span> 条件<span class="token number">1</span><span class="token punctuation">:</span>
+
+        满足条件<span class="token number">1</span> 做的事情<span class="token number">1</span>
+        满足条件<span class="token number">1</span> 做的事情<span class="token number">2</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span>省略<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+        <span class="token keyword">if</span> 条件<span class="token number">2</span><span class="token punctuation">:</span>
+            满足条件<span class="token number">2</span> 做的事情<span class="token number">1</span>
+            满足条件<span class="token number">2</span> 做的事情<span class="token number">2</span>
+            <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span>省略<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></code></pre><ul><li>说明<ul><li>外层的if判断，也可以是if-else</li><li>内层的if判断，也可以是if-else</li><li>根据实际开发的情况，进行选择</li></ul></li></ul><h3 id="3-2、嵌套应用"><a href="#3-2、嵌套应用" class="headerlink" title="3.2、嵌套应用"></a>3.2、嵌套应用</h3><p><strong>demo</strong></p><pre class="language-python"><code class="language-python">    chePiao <span class="token operator">=</span> <span class="token number">1</span>     <span class="token comment" spellcheck="true"># 用1代表有车票，0代表没有车票</span>
+    daoLenght <span class="token operator">=</span> <span class="token number">9</span>     <span class="token comment" spellcheck="true"># 刀子的长度，单位为cm</span>
+
+    <span class="token keyword">if</span> chePiao <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"有车票，可以进站"</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> daoLenght <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"通过安检"</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"终于可以坐着回家了，美滋滋~~~"</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"没有通过安检"</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"刀子的长度超过规定，等待警察处理..."</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"没有车票，不能进站"</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"不要方，真是一票难求啊~~~~(>_&lt;)~~~~"</span><span class="token punctuation">)</span></code></pre><p>结果1：chePiao = 1;daoLenght = 9</p><pre><code>    有车票，可以进站
+    通过安检
+    终于可以回家了，美滋滋~~~</code></pre><p>结果2：chePiao = 1;daoLenght = 20</p><pre><code>    有车票，可以进站
+    没有通过安检
+    刀子的长度超过规定，等待警察处理...</code></pre><p>结果3：chePiao = 0;daoLenght = 9</p><pre><code>    没有车票，不能进站
+    一票难求啊~~~~(&gt;_&lt;)~~~~</code></pre><p>结果4：chePiao = 0;daoLenght = 20</p><pre><code>    没有车票，不能进站
+    一票难求啊~~~~(&gt;_&lt;)~~~~</code></pre><blockquote><p>想一想:为什么结果3和结果4相同？？？</p></blockquote><h3 id="3-3-、练一练"><a href="#3-3-、练一练" class="headerlink" title="3.3 、练一练"></a>3.3 、练一练</h3><blockquote><p>情节描述：上公交车，并且可以有座位坐下</p><p>要求：输入公交卡当前的余额，只要超过2元，就可以上公交车；如果空座位的数量大于0，就可以坐下</p></blockquote><h2 id="4、猜拳游戏"><a href="#4、猜拳游戏" class="headerlink" title="4、猜拳游戏"></a>4、猜拳游戏</h2><blockquote><p>应用，根据if语句相关知识，完善猜拳游戏</p></blockquote><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/A2Data/cdn/img/20191209081136.png" alt="ε=(´ο｀*))"></p><p><strong>优化参考代码</strong></p><blockquote><p>优化以下代码，解决只能玩一次的问题</p></blockquote><pre class="language-python"><code class="language-python">    <span class="token keyword">import</span> random
+
+    player <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'请输入：剪刀(0)  石头(1)  布(2):'</span><span class="token punctuation">)</span>
+
+    player <span class="token operator">=</span> int<span class="token punctuation">(</span>player<span class="token punctuation">)</span>
+
+    computer <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># 用来进行测试</span>
+    <span class="token comment" spellcheck="true"># 感谢关注A2Data</span>
+    <span class="token comment" spellcheck="true">#print('player=%d,computer=%d',(player,computer))</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>player <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token punctuation">(</span>computer <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">or</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>player <span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token punctuation">(</span>computer <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">or</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>player <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token punctuation">(</span>computer <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'获胜，哈哈，你太厉害了'</span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> player <span class="token operator">==</span> computer<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'平局，要不再来一局'</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'输了，不要走，洗洗手接着来，决战到天亮'</span><span class="token punctuation">)</span></code></pre><h2 id="5、循环语句"><a href="#5、循环语句" class="headerlink" title="5、循环语句"></a>5、循环语句</h2><blockquote><p>生活中的循环应用场景：</p><p><strong>跑道、风扇、空调左右上下摆风、地铁日常运行等</strong></p></blockquote><blockquote><p>开发中的循环场景。</p><p>某天，你惹你女朋友生气了，</p><p>需要跟她<em>诚恳</em>地道歉。</p></blockquote><pre class="language-python"><code class="language-python">    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"亲爱的，我错了"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"亲爱的，我错了"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"亲爱的，我错了"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span>还有<span class="token number">99997</span>遍<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></code></pre><ul><li>使用循环语句呢？ 一句话搞定</li></ul><pre class="language-python"><code class="language-python">    i <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> i<span class="token operator">&lt;</span><span class="token number">10000</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"亲爱的，我错了"</span><span class="token punctuation">)</span>
+        i<span class="token operator">+=</span><span class="token number">1</span>  <span class="token comment" spellcheck="true"># i+=1 同等于 i= i+1 </span></code></pre><blockquote><p>使用场景：</p><ul><li>一般情况下，需要多次重复执行的代码，都可以用循环的方式来完成</li><li>循环不是必须要使用的，但是为了提高代码的重复使用率，所以有经验的开发者都会采用循环</li></ul></blockquote><h2 id="6、while循环"><a href="#6、while循环" class="headerlink" title="6、while循环"></a>6、while循环</h2><p><strong>格式</strong></p><pre class="language-python"><code class="language-python">    <span class="token keyword">while</span> 条件<span class="token punctuation">:</span>
+        条件满足时，做的事情<span class="token number">1</span>
+        条件满足时，做的事情<span class="token number">2</span>
+        条件满足时，做的事情<span class="token number">3</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span>省略<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></code></pre><p><strong>demo</strong></p><pre class="language-python"><code class="language-python">    i <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"当前是第%d次执行循环"</span><span class="token operator">%</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"i=%d"</span><span class="token operator">%</span>i<span class="token punctuation">)</span>
+        i<span class="token operator">+=</span><span class="token number">1</span></code></pre><blockquote><p>结果</p></blockquote><pre><code>    当前是第1次执行循环
+    i=0
+    当前是第2次执行循环
+    i=1
+    当前是第3次执行循环
+    i=2
+    当前是第4次执行循环
+    i=3
+    当前是第5次执行循环
+    i=4</code></pre><h2 id="7、while循环应用"><a href="#7、while循环应用" class="headerlink" title="7、while循环应用"></a>7、while循环应用</h2><h3 id="7-1、计算1-100累积和"><a href="#7-1、计算1-100累积和" class="headerlink" title="7.1、计算1~100累积和"></a>7.1、计算1~100累积和</h3><ul><li>注意：包含 1 和 100</li></ul><pre class="language-python"><code class="language-python"><span class="token comment" spellcheck="true"># A2Data提供参考代码</span>
+
+i <span class="token operator">=</span> <span class="token number">1</span>
+sum <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> i<span class="token operator">&lt;=</span><span class="token number">100</span><span class="token punctuation">:</span>
+    sum <span class="token operator">=</span> sum <span class="token operator">+</span> i
+    i <span class="token operator">+=</span> <span class="token number">1</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"1~100的累积和为:%d"</span><span class="token operator">%</span>sum<span class="token punctuation">)</span></code></pre><h3 id="7-2-、计算1-100偶数累积和"><a href="#7-2-、计算1-100偶数累积和" class="headerlink" title="7.2 、计算1~100偶数累积和"></a>7.2 、计算1~100偶数累积和</h3><ul><li>注意： 同样包含1 和 100</li></ul><pre class="language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 欢迎关注A2Data 转发在看求支持哦</span>
+i <span class="token operator">=</span> <span class="token number">1</span>
+sum <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> i<span class="token operator">&lt;=</span><span class="token number">100</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> i<span class="token operator">%</span><span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        sum <span class="token operator">=</span> sum <span class="token operator">+</span> i
+    i<span class="token operator">+=</span><span class="token number">1</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"1~100的累积和为:%d"</span><span class="token operator">%</span>sum<span class="token punctuation">)</span></code></pre><h2 id="8、break和continue"><a href="#8、break和continue" class="headerlink" title="8、break和continue"></a>8、break和continue</h2><h3 id="8-1、break"><a href="#8-1、break" class="headerlink" title="8.1、break"></a>8.1、break</h3><h4 id="8-1-1、for循环"><a href="#8-1-1、for循环" class="headerlink" title="8.1.1、for循环"></a>8.1.1、for循环</h4><blockquote><p>for循环场景下的使用案例。</p><p>具体差别，自己动手输出看。</p></blockquote><p><strong>正常for循环</strong></p><pre class="language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token string">'a2data'</span>
+
+<span class="token keyword">for</span> x <span class="token keyword">in</span> name<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'----'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></code></pre><p><strong>带有break</strong></p><pre class="language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token string">'a2data'</span>
+
+<span class="token keyword">for</span> x <span class="token keyword">in</span> name<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'----'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token string">'d'</span><span class="token punctuation">:</span> 
+        <span class="token keyword">break</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></code></pre><h4 id="8-1-2、while循环"><a href="#8-1-2、while循环" class="headerlink" title="8.1.2、while循环"></a>8.1.2、while循环</h4><blockquote><p>普通循环如下</p></blockquote><pre class="language-python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token keyword">while</span> i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">:</span>
+    i <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'----'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span></code></pre><blockquote><p>带有‘break’循环</p></blockquote><pre class="language-python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token keyword">while</span> i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">:</span>
+    i <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'----'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> i<span class="token operator">==</span><span class="token number">5</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span></code></pre><ul><li>break的作用：用来结束整个循环</li></ul><h3 id="8-2、continue"><a href="#8-2、continue" class="headerlink" title="8.2、continue"></a>8.2、continue</h3><h4 id="8-2-1、for循环"><a href="#8-2-1、for循环" class="headerlink" title="8.2.1、for循环"></a>8.2.1、for循环</h4><pre class="language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token string">'a2data'</span>
+
+<span class="token keyword">for</span> x <span class="token keyword">in</span> name<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'----'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token string">'d'</span><span class="token punctuation">:</span> 
+        <span class="token keyword">continue</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></code></pre><h4 id="8-2-2、while循环"><a href="#8-2-2、while循环" class="headerlink" title="8.2.2、while循环"></a>8.2.2、while循环</h4><pre class="language-python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token keyword">while</span> i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">:</span>
+    i <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'----'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> i<span class="token operator">==</span><span class="token number">5</span><span class="token punctuation">:</span>
+        <span class="token keyword">continue</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span></code></pre><p><strong>总结:</strong></p><ul><li>continue的作用：用来结束本次循环，紧接着执行下一次的循环</li></ul><h4 id="8-2-3、注意点"><a href="#8-2-3、注意点" class="headerlink" title="8.2.3、注意点"></a>8.2.3、注意点</h4><blockquote><ul><li>break/continue只能用在循环中，除此以外不能单独使用</li><li>break/continue在嵌套循环中，只对最近的一层循环起作用</li></ul></blockquote><h2 id="9、while循环嵌套"><a href="#9、while循环嵌套" class="headerlink" title="9、while循环嵌套"></a>9、while循环嵌套</h2><h3 id="9-1while嵌套格式"><a href="#9-1while嵌套格式" class="headerlink" title="9.1while嵌套格式"></a>9.1while嵌套格式</h3><pre class="language-python"><code class="language-python">    <span class="token keyword">while</span> 条件<span class="token number">1</span><span class="token punctuation">:</span>
+
+        条件<span class="token number">1</span>满足时，做的事情<span class="token number">1</span>
+        条件<span class="token number">1</span>满足时，做的事情<span class="token number">2</span>
+        条件<span class="token number">1</span>满足时，做的事情<span class="token number">3</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span>省略<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+        <span class="token keyword">while</span> 条件<span class="token number">2</span><span class="token punctuation">:</span>
+            条件<span class="token number">2</span>满足时，做的事情<span class="token number">1</span>
+            条件<span class="token number">2</span>满足时，做的事情<span class="token number">2</span>
+            条件<span class="token number">2</span>满足时，做的事情<span class="token number">3</span>
+            <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">(</span>省略<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></code></pre><h3 id="9-2、练习打印如下图形"><a href="#9-2、练习打印如下图形" class="headerlink" title="9.2、练习打印如下图形"></a>9.2、练习打印如下图形</h3><pre class="language-python"><code class="language-python">    <span class="token operator">*</span>
+    <span class="token operator">*</span> <span class="token operator">*</span>
+    <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span>
+    <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span>
+    <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">*</span></code></pre><p><strong>参考代码</strong></p><pre class="language-python"><code class="language-python">    i <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> i<span class="token operator">&lt;=</span><span class="token number">5</span><span class="token punctuation">:</span>
+
+        j <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> j<span class="token operator">&lt;=</span>i<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"* "</span><span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+            j<span class="token operator">+=</span><span class="token number">1</span>
+
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
+        i<span class="token operator">+=</span><span class="token number">1</span></code></pre><h3 id="9-3、打印：九九乘法表"><a href="#9-3、打印：九九乘法表" class="headerlink" title="9.3、打印：九九乘法表"></a>9.3、打印：九九乘法表</h3><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/A2Data/cdn/img/20191209083921.png" alt="九九乘法表"></p><h2 id="10、for循环"><a href="#10、for循环" class="headerlink" title="10、for循环"></a>10、for循环</h2><ul><li>掌握 for 循环的语法格式</li><li>掌握 for-else 的执行过程</li></ul><blockquote><p>像while循环一样，for可以完成循环的功能。</p><p>在Python中 for循环可以遍历任何序列的项目，</p><p>如一个列表或者一个字符串等。</p><p>请跟着操作如下demo！</p></blockquote><p><strong>demo0</strong></p><pre class="language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token string">'a2data'</span>
+
+<span class="token keyword">for</span> x <span class="token keyword">in</span> name<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></code></pre><p><strong>demo1</strong></p><pre class="language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token string">'hello1'</span> <span class="token comment" spellcheck="true"># 皮一下很开心</span>
+
+<span class="token keyword">for</span> x <span class="token keyword">in</span> name<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> x<span class="token operator">==</span><span class="token string">'l'</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span> <span class="token comment" spellcheck="true">#退出for循环</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"==for循环过程中，如果没有break则执行=="</span><span class="token punctuation">)</span></code></pre><p><strong>demo2</strong></p><pre class="language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token string">'hello'</span>
+
+<span class="token keyword">for</span> x <span class="token keyword">in</span> name<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#if x=='l':</span>
+    <span class="token comment" spellcheck="true">#    break #退出for循环</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"==for循环过程中，如果没有break则执行=="</span><span class="token punctuation">)</span></code></pre><h2 id="11、总结与练习"><a href="#11、总结与练习" class="headerlink" title="11、总结与练习"></a>11、总结与练习</h2><p><img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/A2Data/cdn/img/20191209085033.png" alt="总结"></p><h3 id="11-1、必做题："><a href="#11-1、必做题：" class="headerlink" title="11.1、必做题："></a>11.1、必做题：</h3><p><strong>使用if，编写程序，实现以下功能</strong></p><ul><li>从键盘获取用户名、密码</li><li>如果用户名和密码都正确（预先设定一个用户名和密码），那么就显示“欢迎进入xxx的世界”，否则提示密码或者用户名错误</li></ul><p><strong>使用while，完成以下图形的输出</strong></p><pre><code>*
+* *
+* * *
+* * * *
+* * * * *
+* * * *
+* * *
+* *
+*</code></pre><h3 id="11-2、选做题："><a href="#11-2、选做题：" class="headerlink" title="11.2、选做题："></a>11.2、选做题：</h3><p>根据以下信息提示，计算出每月乘坐地铁支出的总费用</p><blockquote><p>提示信息（票价）：</p><ul><li>地铁6公里(含)内3元，公交车10公里(含)内2元，使用市政交通一卡通刷卡乘公交车普通卡5折，学生卡2.5折。</li></ul><p>一、城市公共电汽车价格调整为：10公里(含)内2元，10公里以上部分，每增加1元可乘坐5公里。使用市政交通一卡通刷卡乘坐城市公共电汽车，市域内路段给予普通卡5折，学生卡2.5折优惠;市域外路段维持现行折扣优惠不变。享受公交政策的郊区客运价格，由各区、县政府按照城市公共电汽车价格制定。</p><p>二、轨道交通价格调整为：6公里(含)内3元;6公里至12公里(含)4元;12公里至22公里(含)5元;22公里至32公里(含)6元;32公里以上部分，每增加1元可乘坐20公里。使用市政交通一卡通刷卡乘坐轨道交通，每自然月内每张卡支出累计满100元以后的乘次，价格给予8折优惠;满150元以后的乘次，价格给予5折优惠;支出累计达到400元以后的乘次，不再享受打折优惠。</p></blockquote><p><strong>要求</strong></p><p>假设每个月，你都需要上20天班，每次上班需要来回1次，即每天需要乘坐2次同样路线的地铁；每月月初第一次刷公交卡时，扣款5元；编写程序，请计算出你每月乘坐地铁需要的总费用</p><script>document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });</script></div><hr><div class="reprint" id="reprint-statement"><div class="reprint__author"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-user">文章作者: </i></span><span class="reprint-info"><a href="https://www.a2data.cn" rel="external nofollow noreferrer">Jack风</a></span></div><div class="reprint__type"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-link">文章链接: </i></span><span class="reprint-info"><a href="https://www.a2data.cn/posts/51417.html">https://www.a2data.cn/posts/51417.html</a></span></div><div class="reprint__notice"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-copyright">版权声明: </i></span><span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="https://www.a2data.cn" target="_blank">Jack风</a> !</span></div></div><script async defer>document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }</script><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><a href="/tags/Python/"><span class="chip bg-color">Python</span> </a><a href="/tags/编程语言/"><span class="chip bg-color">编程语言</span></a></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="/libs/share/js/social-share.min.js"></script></div></div></div><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.4rem;line-height:38px}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22AB38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019FE8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><style>.valine-card{margin:1.5rem auto}.valine-card .card-content{padding:20px 20px 5px 20px}#vcomments textarea{box-sizing:border-box;background:url() 100% 100% no-repeat}#vcomments p{margin:2px 2px 10px;font-size:1.05rem;line-height:1.78rem}#vcomments blockquote p{text-indent:.2rem}#vcomments a{padding:0 2px;color:#4cbf30;font-weight:500;text-decoration:none}#vcomments img{max-width:100%;height:auto;cursor:pointer}#vcomments ol li{list-style-type:decimal}#vcomments ol,ul{display:block;padding-left:2em;word-spacing:.05rem}#vcomments ul li,ol li{display:list-item;line-height:1.8rem;font-size:1rem}#vcomments ul li{list-style-type:disc}#vcomments ul ul li{list-style-type:circle}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}#vcomments table,td,th{border:0}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments h1{font-size:1.85rem;font-weight:700;line-height:2.2rem}#vcomments h2{font-size:1.65rem;font-weight:700;line-height:1.9rem}#vcomments h3{font-size:1.45rem;font-weight:700;line-height:1.7rem}#vcomments h4{font-size:1.25rem;font-weight:700;line-height:1.5rem}#vcomments h5{font-size:1.1rem;font-weight:700;line-height:1.4rem}#vcomments h6{font-size:1rem;line-height:1.3rem}#vcomments p{font-size:1rem;line-height:1.5rem}#vcomments hr{margin:12px 0;border:0;border-top:1px solid #ccc}#vcomments blockquote{margin:15px 0;border-left:5px solid #42b983;padding:1rem .8rem .3rem .8rem;color:#666;background-color:rgba(66,185,131,.1)}#vcomments pre{font-family:monospace,monospace;padding:1.2em;margin:.5em 0;background:#272822;overflow:auto;border-radius:.3em;tab-size:4}#vcomments code{font-family:monospace,monospace;padding:1px 3px;font-size:.92rem;color:#e96900;background-color:#f8f8f8;border-radius:2px}#vcomments pre code{font-family:monospace,monospace;padding:0;color:#e8eaf6;background-color:#272822}#vcomments pre[class*=language-]{padding:1.2em;margin:.5em 0}#vcomments code[class*=language-],pre[class*=language-]{color:#e8eaf6}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}#vcomments b,strong{font-weight:700}#vcomments dfn{font-style:italic}#vcomments small{font-size:85%}#vcomments cite{font-style:normal}#vcomments mark{background-color:#fcf8e3;padding:.2em}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}</style><div class="card valine-card" data-aos="fade-up"><div class="comment_headling" style="font-size:20px;font-weight:700;position:relative;left:20px;top:15px;padding-bottom:5px"><i class="fas fa-comments fa-fw" aria-hidden="true"></i> <span>评论</span></div><div id="vcomments" class="card-content" style="display:grid"></div></div><script src="/libs/valine/av-min.js"></script><script src="/libs/valine/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"i1I90mFU8urYjNXgiqPT05Jt-gzGzoHsz",appKey:"GXgwCzMM0g2CnM8x0WCM7fPQ",notify:!1,verify:!0,visitor:!0,avatar:"mm",pageSize:"10",lang:"zh-cn",placeholder:"给你个喷我的机会~"})</script><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i>&nbsp;上一篇</div><div class="card"><a href="/posts/27081.html"><div class="card-image"><img src="/medias/featureimages/15.jpg" class="responsive-img" alt="python第二天作业答案"> <span class="card-title">python第二天作业答案</span></div></a><div class="card-content article-content"><div class="summary block-with-text">第二天作业答案，密码加好友获取。</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i>2019-12-11 </span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Python/" class="post-category">Python</a></span></div></div><div class="card-action article-tags"><a href="/tags/Python/"><span class="chip bg-color">Python</span> </a><a href="/tags/编程语言/"><span class="chip bg-color">编程语言</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/posts/5010.html"><div class="card-image"><img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Python第一天作业答案"> <span class="card-title">Python第一天作业答案</span></div></a><div class="card-content article-content"><div class="summary block-with-text">第一天作业答案，密码加好友获取。</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i>2019-12-08 </span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Python/" class="post-category">Python</a></span></div></div><div class="card-action article-tags"><a href="/tags/Python/"><span class="chip bg-color">Python</span> </a><a href="/tags/编程语言/"><span class="chip bg-color">编程语言</span></a></div></div></div></div></article></div><script>$("#articleContent").on("copy",function(e){if("undefined"!=typeof window.getSelection){var n=window.getSelection();if(!((""+n).length<Number.parseInt("120"))){var t=document.getElementsByTagName("body")[0],o=document.createElement("div");o.style.position="absolute",o.style.left="-99999px",t.appendChild(o),o.appendChild(n.getRangeAt(0).cloneContents()),"PRE"===n.getRangeAt(0).commonAncestorContainer.nodeName&&(o.innerHTML="<pre>"+o.innerHTML+"</pre>");var i=document.location.href;o.innerHTML+='<br />来源: A2Data<br />文章作者: JackFeng<br />文章链接: <a href="'+i+'">'+i+"</a><br />本文章著作权归作者所有，任何形式的转载都请注明出处。",n.selectAllChildren(o),window.setTimeout(function(){t.removeChild(o)},200)}}})</script><script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script><script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script><script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script><script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script><style type="text/css">code[class*=language-],pre[class*=language-]{white-space:pre!important}</style></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });</script></main><footer class="page-footer bg-color"><div class="container row center-align"><div class="col s12 m8 l8 copy-right">Copyright&nbsp;&copy; <span id="year">年份</span> <a href="https://www.a2data.cn" target="_blank">JackFeng</a> |&nbsp;Powered by&nbsp &#10084; A2·Data |<br>&nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">43.8k</span>&nbsp;字 <span id="busuanzi_container_site_pv">|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span><span id="busuanzi_container_site_uv">|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人</span><br><span id="sitetime">载入运行时间...</span><script>function siteTime(){window.setTimeout("siteTime()",1e3);var e=1e3,t=60*e,n=60*t,o=24*n,i=365*o,r=new Date,a="2019",m="08",l="18",M="18",d="18",g="18",s=r.getFullYear(),T=r.getMonth()+1,u=r.getDate(),c=r.getHours(),f=r.getMinutes(),h=r.getSeconds(),y=Date.UTC(a,m,l,M,d,g),H=Date.UTC(s,T,u,c,f,h),I=H-y,B=Math.floor(I/i),D=Math.floor(I/o-365*B),E=Math.floor((I-(365*B+D)*o)/n),L=Math.floor((I-(365*B+D)*o-E*n)/t),w=Math.floor((I-(365*B+D)*o-E*n-L*t)/e);a==s?(document.getElementById("year").innerHTML=s,document.getElementById("sitetime").innerHTML="本站已安全运行 "+D+" 天 "+E+" 小时 "+L+" 分钟 "+w+" 秒"):(document.getElementById("year").innerHTML=a+" - "+s,document.getElementById("sitetime").innerHTML="本站已安全运行 "+B+" 年 "+D+" 天 "+E+" 小时 "+L+" 分钟 "+w+" 秒")}setInterval(siteTime,1e3)</script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/A2Data/Blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i> </a><a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=a2data@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i> </a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=66860619" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 66860619" data-position="top" data-delay="50"><i class="fab fa-qq"></i> </a><a href="https://cdn.jsdelivr.net/gh/A2Data/cdn/img/wx.png" class="tooltipped" target="_blank" data-tooltip="添加我的微信: https://cdn.jsdelivr.net/gh/A2Data/cdn/img/wx.png" data-position="top" data-delay="50"><i class="fa fa-weixin"></i> </a><a href="https://zhihu.com/people/a2data" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://zhihu.com/people/a2data" data-position="top" data-delay="50"><i class="fab fa-zhihu1">知</i> </a><a href="https://www.jianshu.com/nb/40277561" class="tooltipped" target="_blank" data-tooltip="关注我的简书: https://www.jianshu.com/nb/40277561" data-position="top" data-delay="50"><i class="fab fa-jianshu">简</i> </a><a href="https://weibo.com/a2data" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/a2data" data-position="top" data-delay="50"><i class="fab fa-weibo"></i></a></div></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="/js/search.js"></script><script type="text/javascript">$(function(){searchFunc("/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script>!function(){var t=document.createElement("script"),s=window.location.protocol.split(":")[0];"https"===s?t.src="https://zz.bdstatic.com/linksubmit/push.js":t.src="http://push.zhanzhang.baidu.com/push.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}()</script><script async src="/libs/others/busuanzi.pure.mini.js"></script><script type="text/javascript" color="0,0,255" pointcolor="0,0,255" opacity="0.7" zindex="-1" count="99" src="/libs/background/canvas-nest.js"></script><script type="text/javascript" size="150" alpha="0.6" zindex="-1" src="/libs/background/ribbon.min.js" async></script><script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async></script><script src="/libs/instantpage/instantpage.js" type="module"></script><script type="text/javascript">window.$crisp=[],window.CRISP_WEBSITE_ID="9e16adc4-63cc-4958-bf99-26d19bf0ede8",function(){d=document,s=d.createElement("script"),s.src="https://client.crisp.chat/l.js",s.async=1,d.getElementsByTagName("head")[0].appendChild(s)}()</script><script id="xplayer" src="https://player.52aicy.cn/Static/player/player.js" key="5ddfdcf6538c8" m="1"></script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body></html><!-- rebuild by neat -->
